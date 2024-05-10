@@ -56,7 +56,7 @@ jobs:
           # ln -s /mnt/openwrt/feeds ./feeds
           # ln -s /mnt/openwrt/staging_dir ./staging_dir
 
-          df -h
+          df -hT $PWD
 
       - name: Add packages
         run: |
