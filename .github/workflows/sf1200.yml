@@ -25,7 +25,8 @@ jobs:
     name: Build OpenWrt firmware
 
     runs-on: ubuntu-20.04
-
+    container:
+      image: "centos:7"  # 需要运行的容器镜像（参考 docker hub）
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
