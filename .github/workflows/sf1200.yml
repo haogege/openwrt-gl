@@ -24,7 +24,7 @@ jobs:
 
     name: Build OpenWrt firmware
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: "ubuntu:18.04"  # 需要运行的容器镜像（参考 docker hub）
     if: github.event.repository.owner.id == github.event.sender.id
@@ -32,7 +32,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: openwrt-18.06-siflower
 
