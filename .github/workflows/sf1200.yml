@@ -30,9 +30,13 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
+      - name: export
+        run: |
+          export ACTIONS_RUNNER_FORCED_INTERNAL_NODE_VERSION=node16
+          export ACTIONS_RUNNER_FORCE_ACTIONS_NODE_VERSION=node16
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           ref: openwrt-18.06-siflower
 
