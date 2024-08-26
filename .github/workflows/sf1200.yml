@@ -98,7 +98,7 @@ jobs:
       - name: Compile firmware
         run: |
           cd openwrt-18.06
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make FORCE_UNSAFE_CONFIGURE=1 -j1 V=s 
           echo "======================="
           echo "Space usage:"
           echo "======================="
